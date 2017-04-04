@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Cartas de willy </title>
+</head>
+
+<body>
+
+<center><h3> Todos las cartas segun mazo </h3></center>
+<hr>
+<br>
+
+{% for each in returning %} 
+  {% if not each.startswith('/static')%}
+  <p>{{ each }}</p>
+  {% endif %}
+  {% if each.startswith('/static') %}
+  <img src="{{ each }}" height = "185" width = "132"> </img> 
+  {% endif %}
+{% endfor %}
+
+
+
+
+</body>
+</html>

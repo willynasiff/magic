@@ -1,0 +1,8 @@
+
+
+MANA POR CRIANZA EN UN MAZO
+select Carta.Nombre, Count(Carta_Color.ID) from Carta, Carta_Mazo, Carta_Color where Carta.ID = Carta_Mazo.ID_Carta and Carta_Color.ID_Carta = Carta.ID and Carta_Mazo.ID_Mazo = 1 group by Carta_Mazo.ID;
+
+
+UPDATE sqlite_sequence SET seq = (SELECT MAX(column) FROM Table) WHERE name="Table"
+
