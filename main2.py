@@ -6,9 +6,13 @@ app = Flask(__name__)
 @app.route("/", methods=['GET','POST'])
 def a():
   if request.method == 'POST':
-    if request.form['cargar'] == 'Aceptar':
-      hola = request.form['numeroMazo']
-      return redirect('/cadaCarta/{}'.format(hola))
+     if request.form['opcion'] == "   1    ":
+       return redirect('/cadaCarta/1')
+     elif request.form['opcion'] == "   2    ":
+       return redirect('/cadaCarta/2')
+     elif request.form['opcion'] == "   3    ":
+       return redirect('/cadaCarta/3')
+
   elif request.method == 'GET':
     return render_template('cada.html')
 
