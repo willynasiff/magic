@@ -10,18 +10,32 @@
 <center><h3> Todos las cartas segun mazo </h3></center>
 <hr>
 <br>
+<table>
 
-{% for each in returning %} 
+{% for each, each2 in returning %}
+  <tr>
+  <td>
   {% if not each.startswith('/static')%}
-  <p>{{ each }}</p>
+  <p>{{ each }}</p> 
   {% endif %}
   {% if each.startswith('/static') %}
   <img src="{{ each }}" height = "185" width = "132"> </img> 
   {% endif %}
+  </td>
+  <td>
+  {% if not each2.startswith('/static')%}
+  <p>{{ each2 }}</p> 
+  {% endif %}
+  {% if each2.startswith('/static') %}
+  <img src="{{ each2 }}" height = "185" width = "132"> </img> 
+ 
+  {% endif %}
+  </td>
+  </tr>
 {% endfor %}
 
 
-
+</table>
 
 </body>
 </html>
