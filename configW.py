@@ -1,1 +1,1 @@
-__database = 'datos.db'
+__database = '/home/sklavenrechner/magic/datos.db'
