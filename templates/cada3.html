@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Cartas de willy </title>
+
+</head>
+
+<body>
+
+<center><h3> Todos los manas segun mazos </h3></center>
+<hr>
+<br>
+
+<table align='center'>
+
+
+{% for each in returning %}
+<tr>  
+  <td>
+  <p>{{ each[0] }}</p> 
+  </td>
+    <td>
+  <p>{{ each[1] }}</p> 
+  </td>
+</tr> 
+{% endfor %}
+ 
+</table>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
