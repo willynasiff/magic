@@ -17,7 +17,7 @@ def a():
        return redirect('/calcularMana')
 
   elif request.method == 'GET':
-    return render_template('cada.html')
+    return render_template('inicio.html')
 
 @app.route("/cadaCarta/<number>")
 def b(number):
@@ -26,7 +26,7 @@ def b(number):
 
 @app.route("/calcularMana")
 def c():
-  return render_template("cada3.html", returning = creador())
+  return render_template("mana.html", returning = creador())
 
 
 
