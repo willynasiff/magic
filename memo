@@ -6,5 +6,4 @@ select Carta.Nombre, Count(Carta_Color.ID) from Carta, Carta_Mazo, Carta_Color w
 
 UPDATE sqlite_sequence SET seq = (SELECT MAX(column) FROM Table) WHERE name="Table"
 
-
 https://github.com/willynasiff/magic.git
