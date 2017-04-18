@@ -35,6 +35,7 @@ def bCuantoMana(mazo):
  
   aLista = []
   bLista = []
+  maLista = []
 
   for row in c.execute(statement):
     tupla = row[0]
@@ -45,8 +46,8 @@ def bCuantoMana(mazo):
    
   miDB.commit()
  
-  derListe = [aLista, bLista]
-
+  maLista.append('Mazo {}'.format(mazo))
+  derListe = [maLista, aLista, bLista]
 
   return derListe
 
@@ -56,8 +57,9 @@ def dMana(nonLands, cMana):
   dic2 = {1 : 'colorless', 2 : 'white', 3 : 'blue', 4 : 'black', 5 : 'red', 6 : 'green'}
 
   nonLand = nonLands 
-  colorM = cMana[0]
-  cantM = cMana[1]
+  nMazo = cMana[0][0]
+  colorM = cMana[1]
+  cantM = cMana[2]
 
   sumaM = sum(cantM)
   lands = 60 - nonLand 
@@ -66,18 +68,23 @@ def dMana(nonLands, cMana):
   
   mandar = [] 
   
+  
+
+  
   for number in cantM:
     porcentaje.append(number * ( 100/sumaM))
-      
-
+   
+  
   
   for number in range(len(porcentaje)):
     porcentaje2.append(porcentaje[number] * (lands/100))
-                        
-    mandar.append('{0} {1:.2f}'.format(dic2[colorM[number]], porcentaje2[number]))
-
-
+    if number == 0:
+      mandar.append(nMazo)
+      mandar.append('{0} {1:.2f}'.format(dic2[colorM[number]], porcentaje2[number])) 
+    else:
+      mandar.append('{0} {1:.2f}'.format(dic2[colorM[number]], porcentaje2[number])) 
   return mandar
+ 
 
 
 def creador():
@@ -90,5 +97,6 @@ def creador():
 
 
 if __name__=='__main__':
-  creador()
+   creador()
+ 
 
