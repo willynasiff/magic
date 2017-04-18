@@ -29,11 +29,18 @@
   {% endif %}
   {% if each2.startswith('/static') %}
   <img src="{{ each2 }}" height = "185" width = "132"> </img> 
- 
   {% endif %}
   </td>
   </tr>
 {% endfor %}
+
+<table align='center'>
+<tr><td>
+  <form action="/cadaCarta/<number>" method="post">
+    <input type="submit" value="Volver" name="pVolver" style="height:40px; width:100px" ></input>
+  </form>
+</td></tr>
+</table>
 
 
 </table>
