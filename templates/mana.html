@@ -12,17 +12,19 @@
 <hr>
 <br>
 
-<table align='center'>
+<table align='center' border= '1'>
 
 
 {% for each in returning %}
-<tr>  
+<tr>   
   <td>
-  <p>{{ each[0] }}</p> 
+    {{ each[0] }} 
   </td>
-  <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
   <td>
-  <p>{{ each[1] }}</p> 
+    {{ each[1] }}
+  </td>
+  <td>
+    {{ each[2] }}
   </td>
 </tr> 
 {% endfor %}
