@@ -19,14 +19,22 @@ def a():
   elif request.method == 'GET':
     return render_template('inicio.html')
 
-@app.route("/cadaCarta/<number>")
+@app.route("/cadaCarta/<number>", methods=['GET','POST'])
 def b(number):
-  return render_template("cada2.html", returning = mostrarCartas(number))
+  if request.method == 'POST':
+    if request.form['pVolver'] == "Volver":
+      return redirect('/')
+  elif request.method == 'GET':
+    return render_template("cada2.html", returning = mostrarCartas(number))
 
 
-@app.route("/calcularMana")
+@app.route("/calcularMana", methods=['GET','POST'])
 def c():
-  return render_template("mana.html", returning = creador())
+  if request.method == 'POST':
+    if request.form['pVolver'] == "Volver":
+      return redirect('/')
+  elif request.method == 'GET':
+    return render_template("mana.html", returning = creador())
 
 
 
