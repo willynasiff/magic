@@ -91,6 +91,7 @@ def creador():
   enviar = []
   for mazo in range(1, 4):
      enviar.append(dMana(bNonLands(mazo), bCuantoMana(mazo)))
+  print enviar
   return enviar
 
 
