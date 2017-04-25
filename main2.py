@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from mostrar2 import mostrarCartas
 from mana2 import creador
+from sueltas import cartasSueltas
 
 app = Flask(__name__)
 
@@ -15,6 +16,8 @@ def a():
        return redirect('/cadaCarta/3')
      elif request.form['opcion'] == "Calcular Mana":
        return redirect('/calcularMana')
+     elif request.form['opcion'] == 'Cartas sueltas':
+       return redirect('/cartasSueltas')
 
   elif request.method == 'GET':
     return render_template('inicio.html')
@@ -35,6 +38,15 @@ def c():
       return redirect('/')
   elif request.method == 'GET':
     return render_template("mana.html", returning = creador())
+
+@app.route("/cartasSueltas", methods=['GET','POST'])
+def d():
+  if request.method == 'POST':
+    if request.form['pVolver'] == "Volver":
+      return redirect('/')
+  elif request.method == 'GET':
+    return render_template("sueltas.html", returning = cartasSueltas())
+
 
 
 
