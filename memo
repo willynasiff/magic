@@ -6,4 +6,10 @@ select Carta.Nombre, Count(Carta_Color.ID) from Carta, Carta_Mazo, Carta_Color w
 
 UPDATE sqlite_sequence SET seq = (SELECT MAX(column) FROM Table) WHERE name="Table"
 
+CANTIDAD DE MANAS Y SUS NOMBRES
+select count(*), Carta.Nombre from Carta_Mazo, Carta where Carta_Mazo.ID_Carta = Carta.ID and Carta.ID_Tipo = 5 group by Nombre;
+
 https://github.com/willynasiff/magic.git
+
+
+

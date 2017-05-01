@@ -7,13 +7,13 @@
 
 <body>
 
-<center><h3> Todos las cartas segun mazo </h3></center>
+<center><h3> Todos las cartas del mazo: {{returning[1]}} </h3></center>
 <hr>
 <br>
 <table align='center'>
 
 
-{% for each, each2 in returning %}
+{% for each, each2 in returning[0]%}
   <tr>
   <td>
   {% if not each.startswith('/static')%}

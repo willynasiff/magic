@@ -8,11 +8,10 @@ def mostrarCartas(requestW):
   c = miDB.cursor()
 
   retorno = []
-  retorno2 = []
   laLista = []
-  mapa = []
   agregar2 = []
   agregar = []
+  ultima = []
 
 
   query = 'select Carta.Nombre, Carta.ID, count(Carta.ID) from Carta, Carta_Mazo where Carta.ID = Carta_Mazo.ID_Carta and Carta_Mazo.ID_Mazo = {} group by Carta.ID order by count(Carta.ID);'.format(requestW)
@@ -59,7 +58,8 @@ def mostrarCartas(requestW):
 
     retorno.append(agregar)
     retorno.append(agregar2)
+
       
- 
-  return retorno
+  ultima = [retorno, requestW]
+  return ultima
   

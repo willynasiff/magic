@@ -28,7 +28,7 @@ def b(number):
     if request.form['pVolver'] == "Volver":
       return redirect('/')
   elif request.method == 'GET':
-    return render_template("cada2.html", returning = mostrarCartas(number))
+    return render_template("cada.html", returning = mostrarCartas(number))
 
 
 @app.route("/calcularMana", methods=['GET','POST'])
