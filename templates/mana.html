@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Cartas de willy </title>
+
+</head>
+
+<body>
+
+<center><h3> Manas segun mazo </h3></center>
+<hr>
+<br><br>
+
+<table align='center'>
+
+
+{% for each in returning %}
+<tr>   
+  <td>
+    {{ each[0] }} 
+  </td>
+  <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+  <td>
+    {{ each[1] }}
+  </td>
+  <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+  <td>
+    {{ each[2] }}
+  </td>
+</tr> 
+<tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr>
+<tr><td>&nbsp&nbsp&nbsp&nbsp&nbsp</td></tr>
+
+
+{% endfor %}
+ 
+</table>
+
+<table align='center'>
+<tr><td>
+  <form action="/calcularMana" method="post">
+    <input type="submit" value="Volver" name="pVolver" style="height:40px; width:100px" ></input>
+  </form>
+</td></tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

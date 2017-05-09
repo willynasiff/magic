@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Cartas de willy </title>
+
+</head>
+
+<body>
+
+<center><h3> Todas las cartas sueltas </h3></center>
+<hr>
+<br><br>
+
+<table align='center'>
+
+
+{% for each in returning %}
+<tr>   
+  <td><b>
+    {{ each[0] }} 
+  </b></td>
+  <td>
+    {{ each[1] }} 
+  </td>
+  <td>
+    {{ each[2] }} 
+  </td>
+</tr> 
+
+{% endfor %}
+ 
+</table>
+
+<table align='center'>
+<tr><td>
+  <form action="/cartasSueltas" method="post">
+    <input type="submit" value="Volver" name="pVolver" style="height:40px; width:100px" ></input>
+  </form>
+</td></tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
