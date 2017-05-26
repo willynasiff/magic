@@ -25,8 +25,12 @@ def a():
 @app.route("/cadaCarta/<number>", methods=['GET','POST'])
 def b(number):
   if request.method == 'POST':
-    if request.form['pVolver'] == "Volver":
+    if request.form['pInicio'] == "Inicio":
       return redirect('/')
+    if request.form['pInicio'] == "Calcular Mana":
+      return redirect('/calcularMana')
+    if request.form['pInicio'] == "Cartas sueltas":
+      return redirect('/cartasSueltas')
   elif request.method == 'GET':
     return render_template("cada.html", returning = mostrarCartas(number))
 
@@ -34,16 +38,20 @@ def b(number):
 @app.route("/calcularMana", methods=['GET','POST'])
 def c():
   if request.method == 'POST':
-    if request.form['pVolver'] == "Volver":
+    if request.form['pInicio'] == "Inicio":
       return redirect('/')
+    if request.form['pInicio'] == "Cartas sueltas":
+      return redirect('/cartasSueltas')
   elif request.method == 'GET':
     return render_template("mana.html", returning = creador())
 
 @app.route("/cartasSueltas", methods=['GET','POST'])
 def d():
   if request.method == 'POST':
-    if request.form['pVolver'] == "Volver":
+    if request.form['pInicio'] == "Inicio":
       return redirect('/')
+    if request.form['pInicio'] == "Calcular Mana":
+      return redirect('/calcularMana')
   elif request.method == 'GET':
     return render_template("sueltas.html", returning = cartasSueltas())
 

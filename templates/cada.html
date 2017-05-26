@@ -1,49 +1,79 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> Cartas de willy </title>
+  <title>Template</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-    BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-  Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-<center><h3> Todos las cartas del mazo: {{returning[1]}} </h3></center>
-<hr>
-<br>
-<table align='center'>
+  <div class="container-fluid">
+  
+    <center><h3> Todos las cartas del mazo: {{returning[1]}} </h3></center>
+    <hr>
+    <br>
 
 
-{% for each, each2 in returning[0]%}
-  <tr>
-  <td>
-  {% if not each.startswith('/static')%}
-  <p>{{ each }}</p> 
-  {% endif %}
-  {% if each.startswith('/static') %}
-  <img src="{{ each }}" height = "185" width = "132"> </img> 
-  {% endif %}
-  </td>
-  <td>
-  {% if not each2.startswith('/static')%}
-  <p>{{ each2 }}</p> 
-  {% endif %}
-  {% if each2.startswith('/static') %}
-  <img src="{{ each2 }}" height = "185" width = "132"> </img> 
-  {% endif %}
-  </td>
-  </tr>
-{% endfor %}
+    <div class="row"> 
+        <div class="col-md-2" style="background-color: #333333"> 
+        <form action="/cadaCarta/<number>" method="post">
+        <input type="submit" value="Inicio" name="pInicio" style="height:40px; width:125px" ></input>
+        <input type="submit" value="Calcular Mana" name="pInicio" style="height:40px; width:125px" ></input>
+        <input type="submit" value="Cartas sueltas" name="pInicio" style="height:40px; width:125px" ></input>
+        </form>
+        </div>
 
-<table align='center'>
-<tr><td>
-  <form action="/cadaCarta/<number>" method="post">
-    <input type="submit" value="Volver" name="pVolver" style="height:40px; width:100px" ></input>
-  </form>
-</td></tr>
-</table>
+        <div class="col-md-10" style="background-color: #43853D">
+
+        <table align='center'>
+        {% for each, each2 in returning[0]%}
+        <tr>
+        <td>
+        {% if not each.startswith('/static')%}
+        <p>{{ each }}</p> 
+        {% endif %}
+        {% if each.startswith('/static') %}
+        <img src="{{ each }}" height = "185" width = "132"> </img> 
+        {% endif %}
+        </td>
+        <td>
+        {% if not each2.startswith('/static')%}
+        <p>{{ each2 }}</p> 
+        {% endif %}
+        {% if each2.startswith('/static') %}
+        <img src="{{ each2 }}" height = "185" width = "132"> </img> 
+        {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+        </table>
+
+        </div>
+
+    </div>
+    
+  </div>
 
 
-</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
